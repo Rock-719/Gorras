@@ -1,0 +1,639 @@
+/* =====================================================================
+   styles.css — Estilos base de CAPZONE
+   Variables, tipografía, navbar, footer, botones, hero y utilidades
+   ===================================================================== */
+
+/* -------------------------------------------------------------------
+   1. Variables de diseño
+   ------------------------------------------------------------------- */
+:root {
+  --cz-black: #111111;
+  --cz-white: #ffffff;
+  --cz-gray: #f5f5f5;
+  --cz-dark: #333333;
+  --cz-accent: #d97706;
+  --cz-accent-dark: #b45309;
+  --cz-accent-deep: #92400e;
+  --cz-accent-soft: #fdf3e7;
+  --cz-success: #198754;
+  --cz-success-dark: #157347;
+  --cz-danger: #dc3545;
+  --cz-warning: #f59f00;
+  --cz-warning-dark: #b45309;
+  --cz-border: #e9e9e9;
+  --cz-muted: #6f6f6f;
+
+  --cz-radius: 14px;
+  --cz-radius-sm: 10px;
+  --cz-shadow: 0 10px 30px rgba(17, 17, 17, 0.08);
+  --cz-shadow-lg: 0 24px 60px rgba(17, 17, 17, 0.16);
+  --cz-transition: 0.25s ease;
+}
+
+/* -------------------------------------------------------------------
+   2. Base y tipografía
+   ------------------------------------------------------------------- */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--cz-dark);
+  background-color: var(--cz-white);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--cz-black);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--cz-transition);
+}
+
+img {
+  max-width: 100%;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 3000;
+  background: var(--cz-black);
+  color: var(--cz-white);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 var(--cz-radius-sm) 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--cz-accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--cz-accent);
+  color: var(--cz-white);
+}
+
+/* -------------------------------------------------------------------
+   3. Barra superior
+   ------------------------------------------------------------------- */
+.topbar {
+  background: var(--cz-black);
+  color: #dcdcdc;
+  font-size: 0.8rem;
+  padding: 0.5rem 0;
+  letter-spacing: 0.02em;
+}
+
+.topbar i {
+  color: var(--cz-accent);
+}
+
+/* -------------------------------------------------------------------
+   4. Navbar
+   ------------------------------------------------------------------- */
+.navbar {
+  background: rgba(17, 17, 17, 0.97);
+  backdrop-filter: blur(10px);
+  padding: 0.85rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+}
+
+.navbar-brand {
+  gap: 0.6rem;
+  font-weight: 700;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--cz-accent-dark);
+  color: var(--cz-white);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.brand-name {
+  color: var(--cz-white);
+  font-size: 1.15rem;
+  letter-spacing: 0.16em;
+}
+
+.navbar .nav-link {
+  color: #e6e6e6;
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.5rem 0.95rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus-visible,
+.navbar .nav-link.active {
+  color: var(--cz-white);
+}
+
+.navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0.95rem;
+  right: 0.95rem;
+  bottom: 0.25rem;
+  height: 2px;
+  background: var(--cz-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--cz-transition);
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.dropdown-menu {
+  border: 0;
+  border-radius: var(--cz-radius-sm);
+  box-shadow: var(--cz-shadow);
+  padding: 0.5rem;
+}
+
+.dropdown-menu .dropdown-item {
+  border-radius: 8px;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.85rem;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background: var(--cz-accent-soft);
+  color: var(--cz-black);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--cz-white);
+  font-size: 1.1rem;
+  transition: background var(--cz-transition), transform var(--cz-transition);
+}
+
+.icon-btn:hover {
+  background: var(--cz-accent);
+  transform: translateY(-2px);
+  color: var(--cz-white);
+}
+
+.icon-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--cz-accent-dark);
+  color: var(--cz-white);
+  font-size: 0.68rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--cz-black);
+}
+
+/* -------------------------------------------------------------------
+   5. Botones
+   ------------------------------------------------------------------- */
+.btn {
+  font-weight: 500;
+  border-radius: var(--cz-radius-sm);
+  padding: 0.6rem 1.35rem;
+  transition: all var(--cz-transition);
+}
+
+.btn-accent {
+  background: var(--cz-accent-dark);
+  border-color: var(--cz-accent-dark);
+  color: var(--cz-white);
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  background: var(--cz-accent-deep);
+  border-color: var(--cz-accent-deep);
+  color: var(--cz-white);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(217, 119, 6, 0.32);
+}
+
+.btn-dark {
+  background: var(--cz-black);
+  border-color: var(--cz-black);
+}
+
+.btn-dark:hover,
+.btn-dark:focus {
+  background: var(--cz-dark);
+  border-color: var(--cz-dark);
+  color: var(--cz-white);
+  transform: translateY(-2px);
+}
+
+.btn-outline-dark:hover {
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: 0.8rem 1.7rem;
+  font-size: 1rem;
+}
+
+.text-accent {
+  color: var(--cz-accent-dark) !important;
+}
+
+/* -------------------------------------------------------------------
+   6. Secciones
+   ------------------------------------------------------------------- */
+.section {
+  padding: 4.5rem 0;
+}
+
+.section-alt {
+  background: var(--cz-gray);
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.section-kicker {
+  display: inline-block;
+  color: var(--cz-accent-dark);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  margin: 0;
+}
+
+.section-subtitle {
+  color: var(--cz-muted);
+  margin: 0.5rem 0 0;
+  max-width: 46ch;
+}
+
+.link-all {
+  font-weight: 600;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.link-all:hover {
+  color: var(--cz-accent);
+}
+
+/* -------------------------------------------------------------------
+   7. Hero
+   ------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  background: var(--cz-black);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.42;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(17, 17, 17, 0.94) 12%, rgba(17, 17, 17, 0.55) 60%, rgba(17, 17, 17, 0.25) 100%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 5rem 0;
+}
+
+.hero-content {
+  max-width: 640px;
+  color: #efefef;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(217, 119, 6, 0.18);
+  border: 1px solid rgba(217, 119, 6, 0.55);
+  color: #f6c88b;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  color: var(--cz-white);
+  font-size: clamp(2.2rem, 5.5vw, 3.9rem);
+  font-weight: 700;
+  margin: 1.1rem 0 1rem;
+  line-height: 1.1;
+}
+
+.hero-title span {
+  color: var(--cz-accent);
+}
+
+.hero-text {
+  color: #d6d6d6;
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  max-width: 52ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.2rem;
+  list-style: none;
+  padding: 0;
+  margin: 2.75rem 0 0;
+}
+
+.hero-stats strong {
+  display: block;
+  color: var(--cz-white);
+  font-size: 1.5rem;
+}
+
+.hero-stats span {
+  color: #b3b3b3;
+  font-size: 0.82rem;
+}
+
+/* -------------------------------------------------------------------
+   8. Breadcrumbs
+   ------------------------------------------------------------------- */
+.breadcrumb-custom {
+  --bs-breadcrumb-divider-color: #b9b9b9;
+  font-size: 0.86rem;
+  margin: 0;
+}
+
+.breadcrumb-custom .breadcrumb-item a {
+  color: var(--cz-muted);
+}
+
+.breadcrumb-custom .breadcrumb-item a:hover {
+  color: var(--cz-accent);
+}
+
+.breadcrumb-custom .breadcrumb-item.active {
+  color: var(--cz-black);
+  font-weight: 500;
+}
+
+/* -------------------------------------------------------------------
+   9. Footer
+   ------------------------------------------------------------------- */
+.site-footer {
+  background: var(--cz-black);
+  color: #b9b9b9;
+  padding: 4rem 0 0;
+  font-size: 0.9rem;
+}
+
+.site-footer h2,
+.site-footer h3 {
+  color: var(--cz-white);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.footer-brand .brand-name {
+  font-size: 1.3rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a:hover {
+  color: var(--cz-accent);
+  padding-left: 4px;
+}
+
+.footer-contact li {
+  display: flex;
+  gap: 0.65rem;
+  margin-bottom: 0.7rem;
+}
+
+.footer-contact i {
+  color: var(--cz-accent);
+  font-size: 1rem;
+  margin-top: 0.2rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--cz-white);
+  transition: all var(--cz-transition);
+}
+
+.social-links a:hover {
+  background: var(--cz-accent);
+  transform: translateY(-3px);
+}
+
+.payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.payment-methods span {
+  background: var(--cz-white);
+  color: var(--cz-black);
+  border-radius: 6px;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 3rem;
+  padding: 1.35rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+}
+
+.footer-bottom a:hover {
+  color: var(--cz-accent);
+}
+
+/* -------------------------------------------------------------------
+   10. Formularios
+   ------------------------------------------------------------------- */
+/* Checkbox/radio con área táctil mínima de 24px (WCAG 2.5.8) */
+.form-check-input {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.form-label {
+  font-size: 0.87rem;
+  font-weight: 500;
+  color: var(--cz-black);
+}
+
+.form-control,
+.form-select {
+  border-radius: var(--cz-radius-sm);
+  border-color: var(--cz-border);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.94rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--cz-accent);
+  box-shadow: 0 0 0 0.2rem rgba(217, 119, 6, 0.18);
+}
+
+.form-control::placeholder {
+  color: #a5a5a5;
+}
+
+/* -------------------------------------------------------------------
+   11. Botón volver arriba
+   ------------------------------------------------------------------- */
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--cz-black);
+  color: var(--cz-white);
+  font-size: 1.1rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all var(--cz-transition);
+  z-index: 1030;
+  box-shadow: var(--cz-shadow);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--cz-accent);
+}

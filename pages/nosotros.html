@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nosotros | CAPZONE — Nuestra historia</title>
+  <meta name="description" content="Conoce CAPZONE: somos una tienda colombiana de gorras con selección artesanal, materiales nobles y envíos a todo el país.">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
+  <link href="../css/components.css" rel="stylesheet">
+  <link href="../css/responsive.css" rel="stylesheet">
+</head>
+<body data-base="../">
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <div class="topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span><i class="bi bi-truck me-2"></i>Envío gratis en compras superiores a $150.000</span>
+      <span class="d-none d-md-inline"><i class="bi bi-telephone me-1"></i>+57 300 123 4567</span>
+    </div>
+  </div>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="../index.html" aria-label="CZ CAPZONE, ir al inicio">
+          <span class="brand-logo" aria-hidden="true">CZ</span>
+          <span class="brand-name">CAPZONE</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Deportivas">Gorras deportivas</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Urbanas">Gorras urbanas</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Trucker">Gorras trucker</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Snapback">Gorras snapback</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Dad%20Hat">Gorras dad hat</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Premium">Gorras premium</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="catalogo.html?oferta=1">Ofertas</a></li>
+            <li class="nav-item"><a class="nav-link active" href="nosotros.html" aria-current="page">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          </ul>
+          <div class="navbar-actions">
+            <button class="icon-btn" type="button" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Buscar productos"><i class="bi bi-search" aria-hidden="true"></i></button>
+            <button class="icon-btn" type="button" data-bs-toggle="modal" data-bs-target="#userModal" aria-label="Mi cuenta"><i class="bi bi-person" aria-hidden="true"></i></button>
+            <button class="icon-btn" type="button" aria-label="Ver favoritos" onclick="showToast('Usa el corazón de cada producto para ver tus favoritos','info')">
+              <i class="bi bi-heart" aria-hidden="true"></i>
+              <span class="icon-badge d-none" data-fav-count>0</span>
+            </button>
+            <a class="icon-btn" href="carrito.html" aria-label="Ver carrito de compras">
+              <i class="bi bi-bag" aria-hidden="true"></i>
+              <span class="icon-badge d-none" data-cart-count>0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ========================== HERO ========================== -->
+    <section class="page-hero">
+      <img src="https://images.pexels.com/photos/31162881/pexels-photo-31162881.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Colección de gorras urbanas exhibidas en una repisa de tienda" onerror="imgFallback(this)">
+      <div class="container position-relative">
+        <nav aria-label="Migas de pan">
+          <ol class="breadcrumb breadcrumb-custom mb-3">
+            <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Nosotros</li>
+          </ol>
+        </nav>
+        <h1>Más que gorras:<br>una forma de vestir la ciudad.</h1>
+        <p>CAPZONE nació en 2019 en un local de 18 m² en Bogotá. Hoy despachamos pedidos a toda Colombia con la misma idea original: que una buena gorra se note desde la primera mirada.</p>
+        <div class="row g-3 mt-3" style="max-width: 640px;">
+          <div class="col-4"><div class="stat-box"><strong>+12.000</strong><span>Pedidos despachados</span></div></div>
+          <div class="col-4"><div class="stat-box"><strong>4.8★</strong><span>Valoración promedio</span></div></div>
+          <div class="col-4"><div class="stat-box"><strong>7</strong><span>Años de experiencia</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= HISTORIA ========================= -->
+    <section class="section" aria-labelledby="storyTitle">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <span class="section-kicker">Nuestra historia</span>
+            <h2 class="section-title" id="storyTitle">Empezamos por pasión por el detalle</h2>
+            <p class="text-muted">Lo que comenzó como un proyecto de fin de semana se convirtió en una marca especializada. Cada temporada revisamos decenas de muestras antes de elegir las que entran al catálogo: probamos el tejido, revisamos la costura del frontal, lavamos la gorra veinte veces y recién entonces la aprobamos.</p>
+            <p class="text-muted">Trabajamos con talleres colombianos y proveedores internacionales auditados. No producimos volumen: producimos piezas que querrás usar durante años.</p>
+            <a class="btn btn-accent mt-2" href="catalogo.html">Conocer el catálogo <i class="bi bi-arrow-right ms-2"></i></a>
+          </div>
+          <div class="col-lg-6">
+            <div class="row g-3">
+              <div class="col-6"><img class="rounded-3 w-100" style="height:220px;object-fit:cover" src="https://images.pexels.com/photos/12284599/pexels-photo-12284599.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="Gorras de colores organizadas en estantes de madera" loading="lazy" onerror="imgFallback(this)"></div>
+              <div class="col-6"><img class="rounded-3 w-100" style="height:220px;object-fit:cover" src="https://images.pexels.com/photos/13697753/pexels-photo-13697753.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="Tres gorras urbanas exhibidas frente a plantas verdes" loading="lazy" onerror="imgFallback(this)"></div>
+              <div class="col-12"><img class="rounded-3 w-100" style="height:240px;object-fit:cover" src="https://images.pexels.com/photos/38309344/pexels-photo-38309344.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Muestra de gorras bordadas en exhibición de tienda" loading="lazy" onerror="imgFallback(this)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= VALORES ========================= -->
+    <section class="section section-alt" aria-labelledby="valuesTitle">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Lo que nos mueve</span>
+            <h2 class="section-title" id="valuesTitle">Nuestros valores</h2>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="mini-card">
+              <i class="bi bi-gem mini-card-icon"></i>
+              <h3>Calidad real</h3>
+              <p>Algodones peinados, cueros genuinos y bordados de alta densidad que aguantan el uso diario.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="mini-card">
+              <i class="bi bi-palette mini-card-icon"></i>
+              <h3>Identidad propia</h3>
+              <p>Diseños pensados para la calle colombiana: nada de copias, todo con carácter.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="mini-card">
+              <i class="bi bi-truck mini-card-icon"></i>
+              <h3>Despacho ágil</h3>
+              <p>Pedidos antes de las 2 p.m. salen el mismo día con guía de seguimiento.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="mini-card">
+              <i class="bi bi-heart mini-card-icon"></i>
+              <h3>Comunidad</h3>
+              <p>Devolvemos parte del valor a artistas y equipos locales que inspiran cada colección.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== CÓMO TRABAJAMOS ========================== -->
+    <section class="section" aria-labelledby="processTitle">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Proceso</span>
+            <h2 class="section-title" id="processTitle">Cómo elegimos cada gorra</h2>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="mini-card">
+              <h3><span class="text-accent">01.</span> Investigación</h3>
+              <p>Seguimos tendencias, entrevistamos a nuestros clientes y revisamos el mercado antes de diseñar.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="mini-card">
+              <h3><span class="text-accent">02.</span> Prototipado</h3>
+              <p>Proveemos muestras, las usamos durante semanas y medimos comodidad, forma y color.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="mini-card">
+              <h3><span class="text-accent">03.</span> Control de calidad</h3>
+              <p>Cada unidad se revisa una a una: costuras, ojales, cierre y acabado del bordado.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="mini-card">
+              <h3><span class="text-accent">04.</span> Entrega</h3>
+              <p>Empaque protector, guía de seguimiento y acompañamiento postventa por WhatsApp.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== INFO LEGAL ======================== -->
+    <section class="section section-alt" id="legales" aria-labelledby="legalesTitle">
+      <div class="container">
+        <h2 class="section-title" id="legalesTitle">Información legal</h2>
+        <div class="row g-4 mt-1">
+          <div class="col-md-4">
+            <h3 class="h6 text-uppercase">Términos y condiciones</h3>
+            <p class="small mb-0">Los precios están expresados en pesos colombianos (COP) e incluyen IVA. El pedido se considera confirmado cuando recibes el correo con el número de pedido. Esta es una demostración de frontend: no se procesan pagos reales.</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="h6 text-uppercase">Política de privacidad</h3>
+            <p class="small mb-0">Los datos que ingresas en el formulario (nombre, correo, teléfono y dirección) se usan únicamente para simular la generación de tu pedido en tu navegador. No se envían a ningún servidor ni se comparten con terceros.</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="h6 text-uppercase">Política de cambios</h3>
+            <p class="small mb-0">Tienes 30 días calendario para cambios y devoluciones, siempre que la gorra conserve etiquetas y no tenga señas de uso. Los gastos de envío de devolución corren por cuenta del cliente salvo producto defectuoso.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== CTA ========================== -->
+    <section class="section pt-0">
+      <div class="container">
+        <div class="promo-banner text-center">
+          <span class="promo-icon"><i class="bi bi-shop"></i></span>
+          <h2 class="mt-2">¿Listo para encontrar tu gorra?</h2>
+          <p class="mb-3">Más de 18 modelos disponibles con envío gratis desde $150.000.</p>
+          <a class="btn btn-accent btn-lg" href="catalogo.html">Ir al catálogo <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <span class="brand-logo" aria-hidden="true">CZ</span>
+            <span class="brand-name">CAPZONE</span>
+          </div>
+          <p>Tienda especializada en gorras. Seleccionamos materiales nobles, bordados limpios y siluetas que duran más de una temporada.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="CAPZONE en Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="CAPZONE en Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="CAPZONE en TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="CAPZONE en X"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h2>Enlaces</h2>
+          <ul class="footer-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html">Mi carrito</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h2>Categorías</h2>
+          <ul class="footer-links">
+            <li><a href="catalogo.html?categoria=Deportivas">Deportivas</a></li>
+            <li><a href="catalogo.html?categoria=Urbanas">Urbanas</a></li>
+            <li><a href="catalogo.html?categoria=Trucker">Trucker</a></li>
+            <li><a href="catalogo.html?categoria=Snapback">Snapback</a></li>
+            <li><a href="catalogo.html?categoria=Premium">Premium</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h2>Contacto</h2>
+          <ul class="footer-links footer-contact">
+            <li><i class="bi bi-geo-alt"></i><span>Calle 123 #45-67, Bogotá D.C., Colombia</span></li>
+            <li><i class="bi bi-telephone"></i><span>+57 300 123 4567</span></li>
+            <li><i class="bi bi-envelope"></i><span>hola@capzone.com</span></li>
+            <li><i class="bi bi-clock"></i><span>Lun a Sáb · 9:00 a.m. – 7:00 p.m.</span></li>
+          </ul>
+          <h2 class="mt-4">Métodos de pago</h2>
+          <div class="payment-methods">
+            <span>VISA</span><span>MASTERCARD</span><span>PSE</span><span>NEQUI</span><span>DAVIPLATA</span><span>CONTRAENTREGA</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 CAPZONE. Todos los derechos reservados.</span>
+        <span><a href="nosotros.html#legales">Términos y condiciones</a> · <a href="nosotros.html#legales">Política de privacidad</a> · <a href="nosotros.html#legales">Política de cambios</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/search.js"></script>
+</body>
+</html>

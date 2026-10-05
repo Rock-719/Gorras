@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finalizar compra | CAPZONE</title>
+  <meta name="description" content="Completa tus datos de envío y el método de pago para finalizar tu pedido en CAPZONE. Proceso simulado sin cobros reales.">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
+  <link href="../css/components.css" rel="stylesheet">
+  <link href="../css/responsive.css" rel="stylesheet">
+</head>
+<body data-base="../">
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <div class="topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span><i class="bi bi-truck me-2"></i>Envío gratis en compras superiores a $150.000</span>
+      <span class="d-none d-md-inline"><i class="bi bi-telephone me-1"></i>+57 300 123 4567</span>
+    </div>
+  </div>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="../index.html" aria-label="CZ CAPZONE, ir al inicio">
+          <span class="brand-logo" aria-hidden="true">CZ</span>
+          <span class="brand-name">CAPZONE</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="catalogo.html" aria-current="page">Catálogo</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Deportivas">Gorras deportivas</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Urbanas">Gorras urbanas</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Trucker">Gorras trucker</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Snapback">Gorras snapback</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Dad%20Hat">Gorras dad hat</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Premium">Gorras premium</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="catalogo.html?oferta=1">Ofertas</a></li>
+            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          </ul>
+          <div class="navbar-actions">
+            <button class="icon-btn" type="button" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Buscar productos"><i class="bi bi-search" aria-hidden="true"></i></button>
+            <button class="icon-btn" type="button" data-bs-toggle="modal" data-bs-target="#userModal" aria-label="Mi cuenta"><i class="bi bi-person" aria-hidden="true"></i></button>
+            <button class="icon-btn" type="button" aria-label="Ver favoritos" onclick="showToast('Usa el corazón de cada producto para ver tus favoritos','info')">
+              <i class="bi bi-heart" aria-hidden="true"></i>
+              <span class="icon-badge d-none" data-fav-count>0</span>
+            </button>
+            <a class="icon-btn" href="carrito.html" aria-label="Ver carrito de compras">
+              <i class="bi bi-bag" aria-hidden="true"></i>
+              <span class="icon-badge d-none" data-cart-count>0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="checkout-page">
+    <div class="container">
+      <nav aria-label="Migas de pan">
+        <ol class="breadcrumb breadcrumb-custom mb-2">
+          <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
+          <li class="breadcrumb-item"><a href="carrito.html">Carrito</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+        </ol>
+      </nav>
+      <h1 class="mb-4">Finalizar compra</h1>
+
+      <form id="checkoutForm" novalidate>
+        <div class="row g-4">
+          <!-- ===================== FORMULARIO ===================== -->
+          <div class="col-lg-7">
+            <!-- Información del cliente -->
+            <section class="checkout-section">
+              <h2 class="form-section-title"><i class="bi bi-person"></i> Información del cliente</h2>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="firstName">Nombre *</label>
+                  <input type="text" class="form-control" id="firstName" name="firstName" autocomplete="given-name" required>
+                  <div class="invalid-feedback">Ingresa tu nombre.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="lastName">Apellido *</label>
+                  <input type="text" class="form-control" id="lastName" name="lastName" autocomplete="family-name" required>
+                  <div class="invalid-feedback">Ingresa tu apellido.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="email">Correo electrónico *</label>
+                  <input type="email" class="form-control" id="email" name="email" autocomplete="email" required>
+                  <div class="invalid-feedback">Ingresa un correo válido.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="phone">Teléfono *</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" placeholder="300 123 4567" autocomplete="tel" required>
+                  <div class="invalid-feedback">Ingresa un teléfono válido (solo números).</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Dirección de envío -->
+            <section class="checkout-section">
+              <h2 class="form-section-title"><i class="bi bi-geo-alt"></i> Dirección de envío</h2>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="department">Departamento *</label>
+                  <select class="form-select" id="department" name="department" required>
+                    <option value="">Selecciona...</option>
+                    <option>Amazonas</option><option>Antioquia</option><option>Arauca</option>
+                    <option>Atlántico</option><option>Bogotá D.C.</option><option>Bolívar</option>
+                    <option>Boyacá</option><option>Caldas</option><option>Caquetá</option>
+                    <option>Casanare</option><option>Cauca</option><option>Cesar</option>
+                    <option>Córdoba</option><option>Cundinamarca</option><option>Chocó</option>
+                    <option>Guainía</option><option>Guaviare</option><option>Huila</option>
+                    <option>La Guajira</option><option>Magdalena</option><option>Meta</option>
+                    <option>Nariño</option><option>Norte de Santander</option><option>Quindío</option>
+                    <option>Risaralda</option><option>San Andrés y Providencia</option>
+                    <option>Santander</option><option>Sucre</option><option>Tolima</option>
+                    <option>Valle del Cauca</option><option>Vaupés</option><option>Vichada</option>
+                  </select>
+                  <div class="invalid-feedback">Selecciona un departamento.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="city">Ciudad *</label>
+                  <input type="text" class="form-control" id="city" name="city" autocomplete="address-level2" required>
+                  <div class="invalid-feedback">Ingresa tu ciudad.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="address">Dirección *</label>
+                  <input type="text" class="form-control" id="address" name="address" placeholder="Calle, número, barrio" autocomplete="street-address" required>
+                  <div class="invalid-feedback">Ingresa tu dirección.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="postalCode">Código postal</label>
+                  <input type="text" class="form-control" id="postalCode" name="postalCode" inputmode="numeric" autocomplete="postal-code">
+                  <div class="invalid-feedback">Usa solo números.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="notes">Información adicional</label>
+                  <input type="text" class="form-control" id="notes" name="notes" placeholder="Referencias de entrega (opcional)">
+                </div>
+              </div>
+            </section>
+
+            <!-- Método de pago -->
+            <section class="checkout-section">
+              <h2 class="form-section-title"><i class="bi bi-credit-card"></i> Método de pago</h2>
+              <div class="payment-options" role="radiogroup" aria-label="Método de pago">
+                <label class="payment-option is-selected">
+                  <input type="radio" name="paymentMethod" value="tarjeta" checked>
+                  <i class="bi bi-credit-card-front"></i>
+                  <span><strong>Tarjeta de crédito / débito</strong><small>Visa, Mastercard y American Express</small></span>
+                </label>
+                <label class="payment-option">
+                  <input type="radio" name="paymentMethod" value="pse">
+                  <i class="bi bi-bank"></i>
+                  <span><strong>PSE</strong><small>Débito desde tu banco en línea</small></span>
+                </label>
+                <label class="payment-option">
+                  <input type="radio" name="paymentMethod" value="contraentrega">
+                  <i class="bi bi-cash-stack"></i>
+                  <span><strong>Contraentrega</strong><small>Pagas en efectivo al recibir el pedido</small></span>
+                </label>
+              </div>
+
+              <div class="row g-3 mt-1" id="cardFields">
+                <div class="col-12">
+                  <label class="form-label" for="cardNumber">Número de tarjeta *</label>
+                  <input type="text" class="form-control" id="cardNumber" name="cardNumber" inputmode="numeric" placeholder="0000 0000 0000 0000" autocomplete="cc-number">
+                  <div class="invalid-feedback">Ingresa los 16 dígitos de la tarjeta.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="cardExpiry">Vencimiento *</label>
+                  <input type="text" class="form-control" id="cardExpiry" name="cardExpiry" placeholder="MM/AA" autocomplete="cc-exp">
+                  <div class="invalid-feedback">Usa el formato MM/AA.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="cardCvv">CVV *</label>
+                  <input type="text" class="form-control" id="cardCvv" name="cardCvv" inputmode="numeric" placeholder="123" autocomplete="cc-csc">
+                  <div class="invalid-feedback">Ingresa los 3 o 4 dígitos.</div>
+                </div>
+                <div class="col-12">
+                  <p class="small text-muted mb-0"><i class="bi bi-lock me-1"></i>Simulación de pago: no se realiza ningún cobro ni se almacena información de tarjetas.</p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- ===================== RESUMEN ===================== -->
+          <div class="col-lg-5">
+            <div class="checkout-sticky">
+              <div class="summary-box" id="orderSummary"></div>
+              <button type="submit" class="btn btn-accent btn-lg w-100 mt-3" id="placeOrderBtn">
+                <i class="bi bi-bag-check me-2"></i>Confirmar pedido
+              </button>
+              <p class="small text-muted mt-3 text-center mb-0">
+                Al confirmar aceptas los <a href="nosotros.html#legales" class="text-accent">términos y condiciones</a> y la <a href="nosotros.html#legales" class="text-accent">política de privacidad</a>.
+              </p>
+              <a class="d-inline-block mt-2 small" href="carrito.html"><i class="bi bi-arrow-left me-1"></i>Volver al carrito</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <span class="brand-logo" aria-hidden="true">CZ</span>
+            <span class="brand-name">CAPZONE</span>
+          </div>
+          <p>Tienda especializada en gorras. Seleccionamos materiales nobles, bordados limpios y siluetas que duran más de una temporada.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="CAPZONE en Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="CAPZONE en Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="CAPZONE en TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="CAPZONE en X"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h2>Enlaces</h2>
+          <ul class="footer-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html">Mi carrito</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h2>Categorías</h2>
+          <ul class="footer-links">
+            <li><a href="catalogo.html?categoria=Deportivas">Deportivas</a></li>
+            <li><a href="catalogo.html?categoria=Urbanas">Urbanas</a></li>
+            <li><a href="catalogo.html?categoria=Trucker">Trucker</a></li>
+            <li><a href="catalogo.html?categoria=Snapback">Snapback</a></li>
+            <li><a href="catalogo.html?categoria=Premium">Premium</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h2>Contacto</h2>
+          <ul class="footer-links footer-contact">
+            <li><i class="bi bi-geo-alt"></i><span>Calle 123 #45-67, Bogotá D.C., Colombia</span></li>
+            <li><i class="bi bi-telephone"></i><span>+57 300 123 4567</span></li>
+            <li><i class="bi bi-envelope"></i><span>hola@capzone.com</span></li>
+            <li><i class="bi bi-clock"></i><span>Lun a Sáb · 9:00 a.m. – 7:00 p.m.</span></li>
+          </ul>
+          <h2 class="mt-4">Métodos de pago</h2>
+          <div class="payment-methods">
+            <span>VISA</span><span>MASTERCARD</span><span>PSE</span><span>NEQUI</span><span>DAVIPLATA</span><span>CONTRAENTREGA</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 CAPZONE. Todos los derechos reservados.</span>
+        <span><a href="nosotros.html#legales">Términos y condiciones</a> · <a href="nosotros.html#legales">Política de privacidad</a> · <a href="nosotros.html#legales">Política de cambios</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/checkout.js"></script>
+</body>
+</html>

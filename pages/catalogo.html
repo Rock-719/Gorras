@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo de gorras | CAPZONE</title>
+  <meta name="description" content="Explora todo el catálogo de gorras CAPZONE: filtra por categoría, subcategoría, color y precio, y ordena por relevancia o precio.">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
+  <link href="../css/components.css" rel="stylesheet">
+  <link href="../css/responsive.css" rel="stylesheet">
+</head>
+<body data-base="../">
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <div class="topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span><i class="bi bi-truck me-2"></i>Envío gratis en compras superiores a $150.000</span>
+      <span class="d-none d-md-inline"><i class="bi bi-telephone me-1"></i>+57 300 123 4567</span>
+    </div>
+  </div>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="../index.html" aria-label="CZ CAPZONE, ir al inicio">
+          <span class="brand-logo" aria-hidden="true">CZ</span>
+          <span class="brand-name">CAPZONE</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="catalogo.html" aria-current="page">Catálogo</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Deportivas">Gorras deportivas</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Urbanas">Gorras urbanas</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Trucker">Gorras trucker</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Snapback">Gorras snapback</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Dad%20Hat">Gorras dad hat</a></li>
+                <li><a class="dropdown-item" href="catalogo.html?categoria=Premium">Gorras premium</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="catalogo.html?oferta=1">Ofertas</a></li>
+            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          </ul>
+          <div class="navbar-actions">
+            <button class="icon-btn" type="button" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Buscar productos"><i class="bi bi-search" aria-hidden="true"></i></button>
+            <button class="icon-btn" type="button" data-bs-toggle="modal" data-bs-target="#userModal" aria-label="Mi cuenta"><i class="bi bi-person" aria-hidden="true"></i></button>
+            <button class="icon-btn" type="button" aria-label="Ver favoritos" onclick="showToast('Usa el corazón de cada producto para ver tus favoritos','info')">
+              <i class="bi bi-heart" aria-hidden="true"></i>
+              <span class="icon-badge d-none" data-fav-count>0</span>
+            </button>
+            <a class="icon-btn" href="carrito.html" aria-label="Ver carrito de compras">
+              <i class="bi bi-bag" aria-hidden="true"></i>
+              <span class="icon-badge d-none" data-cart-count>0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ========================= CABECERA ========================= -->
+    <div class="page-header">
+      <div class="container">
+        <nav aria-label="Migas de pan">
+          <ol class="breadcrumb breadcrumb-custom mb-2">
+            <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Catálogo</li>
+          </ol>
+        </nav>
+        <h1 id="catalogTitle">Catálogo completo</h1>
+        <p class="mb-0 mt-2">Filtra por categoría, color y precio para encontrar tu gorra ideal.</p>
+        <h2 class="visually-hidden">Resultados del catálogo</h2>
+      </div>
+    </div>
+
+    <!-- ========================== CATÁLOGO ========================== -->
+    <section class="section">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Filtros en escritorio -->
+          <div class="col-lg-3 d-none d-lg-block">
+            <aside class="filter-panel" id="filtersDesktop" aria-label="Filtros de productos"></aside>
+          </div>
+
+          <!-- Resultados -->
+          <div class="col-lg-9">
+            <div class="catalog-toolbar">
+              <div class="d-flex align-items-center gap-2 flex-grow-1 flex-md-grow-0">
+                <button class="btn btn-outline-dark btn-sm d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#filtersOffcanvasPanel" aria-controls="filtersOffcanvasPanel">
+                  <i class="bi bi-funnel me-1"></i>Filtros
+                </button>
+                <div class="input-group">
+                  <span class="input-group-text bg-white"><i class="bi bi-search" aria-hidden="true"></i></span>
+                  <label class="visually-hidden" for="catalogSearch">Buscar en el catálogo</label>
+                  <input type="search" class="form-control" id="catalogSearch" placeholder="Buscar gorra, color, categoría...">
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <p class="result-count mb-0"><i class="bi bi-grid-3x3-gap me-1"></i><strong id="resultCount"></strong></p>
+                <label class="visually-hidden" for="sortSelect">Ordenar productos por</label>
+                <select class="form-select form-select-sm" id="sortSelect" title="Ordenar por">
+                  <option value="relevancia">Relevancia</option>
+                  <option value="precio-asc">Precio: menor a mayor</option>
+                  <option value="precio-desc">Precio: mayor a menor</option>
+                  <option value="recientes">Más recientes</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="active-filters" id="activeFilters" role="group" aria-label="Filtros activos"></div>
+
+            <div class="product-grid catalog-grid" id="grid" aria-live="polite"></div>
+
+            <noscript>
+              <div class="alert alert-warning mt-4">Activa JavaScript para usar los filtros y ver los productos del catálogo.</div>
+            </noscript>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FILTROS EN MÓVIL (OFFCANVAS) ==================== -->
+  <aside class="offcanvas offcanvas-end" tabindex="-1" id="filtersOffcanvasPanel" aria-labelledby="filtersOffcanvasLabel">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title h5" id="filtersOffcanvasLabel"><i class="bi bi-funnel me-2"></i>Filtros</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar filtros"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="filter-panel" id="filtersOffcanvas"></div>
+      <button type="button" class="btn btn-accent w-100 mt-3" data-bs-dismiss="offcanvas">Ver resultados</button>
+    </div>
+  </aside>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <span class="brand-logo" aria-hidden="true">CZ</span>
+            <span class="brand-name">CAPZONE</span>
+          </div>
+          <p>Tienda especializada en gorras. Seleccionamos materiales nobles, bordados limpios y siluetas que duran más de una temporada.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="CAPZONE en Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="CAPZONE en Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="CAPZONE en TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="CAPZONE en X"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h2>Enlaces</h2>
+          <ul class="footer-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html">Mi carrito</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h2>Categorías</h2>
+          <ul class="footer-links">
+            <li><a href="catalogo.html?categoria=Deportivas">Deportivas</a></li>
+            <li><a href="catalogo.html?categoria=Urbanas">Urbanas</a></li>
+            <li><a href="catalogo.html?categoria=Trucker">Trucker</a></li>
+            <li><a href="catalogo.html?categoria=Snapback">Snapback</a></li>
+            <li><a href="catalogo.html?categoria=Premium">Premium</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h2>Contacto</h2>
+          <ul class="footer-links footer-contact">
+            <li><i class="bi bi-geo-alt"></i><span>Calle 123 #45-67, Bogotá D.C., Colombia</span></li>
+            <li><i class="bi bi-telephone"></i><span>+57 300 123 4567</span></li>
+            <li><i class="bi bi-envelope"></i><span>hola@capzone.com</span></li>
+            <li><i class="bi bi-clock"></i><span>Lun a Sáb · 9:00 a.m. – 7:00 p.m.</span></li>
+          </ul>
+          <h2 class="mt-4">Métodos de pago</h2>
+          <div class="payment-methods">
+            <span>VISA</span><span>MASTERCARD</span><span>PSE</span><span>NEQUI</span><span>DAVIPLATA</span><span>CONTRAENTREGA</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 CAPZONE. Todos los derechos reservados.</span>
+        <span><a href="nosotros.html#legales">Términos y condiciones</a> · <a href="nosotros.html#legales">Política de privacidad</a> · <a href="nosotros.html#legales">Política de cambios</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/filters.js"></script>
+</body>
+</html>

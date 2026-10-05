@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Imagen de categoría no disponible">
+  <rect width="800" height="800" fill="#111111"/>
+  <circle cx="640" cy="160" r="220" fill="#d97706" opacity="0.35"/>
+  <text x="80" y="440" font-family="Poppins, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">CAPZONE</text>
+  <text x="80" y="510" font-family="Poppins, Arial, sans-serif" font-size="34" fill="#d97706">Categoría</text>
+</svg>
