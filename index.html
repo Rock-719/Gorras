@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CAPZONE — Gorras online | Encuentra tu estilo, lleva tu gorra</title>
+  <meta name="description" content="Tienda online de gorras: urbanas, deportivas, trucker, snapback, dad hat y premium. Envío gratis desde $150.000, cambios en 30 días y pago seguro.">
+  <meta name="theme-color" content="#111111">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/components.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+</head>
+<body data-base="">
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <div class="topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span><i class="bi bi-truck me-2"></i>Envío gratis en compras superiores a $150.000</span>
+      <span class="d-none d-md-inline"><i class="bi bi-telephone me-1"></i>+57 300 123 4567</span>
+    </div>
+  </div>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="CZ CAPZONE, ir al inicio">
+          <span class="brand-logo" aria-hidden="true">CZ</span>
+          <span class="brand-name">CAPZONE</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/catalogo.html">Catálogo</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="pages/catalogo.html?categoria=Deportivas">Gorras deportivas</a></li>
+                <li><a class="dropdown-item" href="pages/catalogo.html?categoria=Urbanas">Gorras urbanas</a></li>
+                <li><a class="dropdown-item" href="pages/catalogo.html?categoria=Trucker">Gorras trucker</a></li>
+                <li><a class="dropdown-item" href="pages/catalogo.html?categoria=Snapback">Gorras snapback</a></li>
+                <li><a class="dropdown-item" href="pages/catalogo.html?categoria=Dad%20Hat">Gorras dad hat</a></li>
+                <li><a class="dropdown-item" href="pages/catalogo.html?categoria=Premium">Gorras premium</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="pages/catalogo.html?oferta=1">Ofertas</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/contacto.html">Contacto</a></li>
+          </ul>
+          <div class="navbar-actions">
+            <button class="icon-btn" type="button" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Buscar productos"><i class="bi bi-search" aria-hidden="true"></i></button>
+            <button class="icon-btn" type="button" data-bs-toggle="modal" data-bs-target="#userModal" aria-label="Mi cuenta"><i class="bi bi-person" aria-hidden="true"></i></button>
+            <button class="icon-btn" type="button" aria-label="Ver favoritos" onclick="showToast('Usa el corazón de cada producto para ver tus favoritos','info')">
+              <i class="bi bi-heart" aria-hidden="true"></i>
+              <span class="icon-badge d-none" data-fav-count>0</span>
+            </button>
+            <a class="icon-btn" href="pages/carrito.html" aria-label="Ver carrito de compras">
+              <i class="bi bi-bag" aria-hidden="true"></i>
+              <span class="icon-badge d-none" data-cart-count>0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ============================= HERO ============================= -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <img class="hero-bg" src="https://images.pexels.com/photos/12284599/pexels-photo-12284599.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="Variedad de gorras de colores exhibidas en estantes de madera de una tienda" onerror="imgFallback(this)">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <span class="hero-kicker"><i class="bi bi-fire"></i> Nueva colección 2026</span>
+          <h1 class="hero-title" id="heroTitle">Encuentra tu estilo.<br><span>Lleva tu gorra.</span></h1>
+          <p class="hero-text">Gorras seleccionadas una a una: urbanas, deportivas, trucker, snapback y piezas premium. Calidad que se siente desde el primer uso, con envío a toda Colombia.</p>
+          <div class="hero-actions">
+            <a class="btn btn-accent btn-lg" href="pages/catalogo.html">Comprar ahora <i class="bi bi-arrow-right ms-2"></i></a>
+            <a class="btn btn-outline-light btn-lg" href="pages/catalogo.html">Ver catálogo</a>
+          </div>
+          <ul class="hero-stats">
+            <li><strong>+18</strong><span>Gorras en catálogo</span></li>
+            <li><strong>4.8★</strong><span>Valoración promedio</span></li>
+            <li><strong>24h</strong><span>Despacho en Bogotá</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= GARANTÍAS ========================= -->
+    <section class="section py-4" aria-label="Beneficios de compra">
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-6 col-lg-3">
+            <div class="mini-card text-center">
+              <i class="bi bi-truck mini-card-icon mx-auto"></i>
+              <h2>Envío gratis</h2>
+              <p>En pedidos superiores a $150.000 a todo el país.</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="mini-card text-center">
+              <i class="bi bi-arrow-repeat mini-card-icon mx-auto"></i>
+              <h2>Cambios fáciles</h2>
+              <p>30 días para cambiar o devolver sin complicaciones.</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="mini-card text-center">
+              <i class="bi bi-shield-check mini-card-icon mx-auto"></i>
+              <h2>Pago seguro</h2>
+              <p>Tarjeta, PSE o contraentrega. Proceso 100% protegido.</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="mini-card text-center">
+              <i class="bi bi-headset mini-card-icon mx-auto"></i>
+              <h2>Soporte real</h2>
+              <p>Te acompañamos por WhatsApp antes y después de comprar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== CATEGORÍAS ========================== -->
+    <section class="section section-alt" aria-labelledby="categoriesTitle">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Compra por estilo</span>
+            <h2 class="section-title" id="categoriesTitle">Categorías</h2>
+            <p class="section-subtitle">Seis universos, una misma obsesión: que tu gorra diga algo de ti.</p>
+          </div>
+          <a class="link-all" href="pages/catalogo.html">Ver todas <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-6 col-lg-4">
+            <a class="category-card" href="pages/catalogo.html?categoria=Deportivas">
+              <img src="https://images.pexels.com/photos/36152381/pexels-photo-36152381.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Gorra deportiva roja y negra en interior" loading="lazy" onerror="imgFallback(this)">
+              <div class="category-body">
+                <h3>Gorras deportivas</h3>
+                <p>Ligeras y transpirables para entrenar y competir.</p>
+                <span class="category-cta">Explorar <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-lg-4">
+            <a class="category-card" href="pages/catalogo.html?categoria=Urbanas">
+              <img src="https://images.pexels.com/photos/16628549/pexels-photo-16628549.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Joven urbano con gorra y audífonos en la calle" loading="lazy" onerror="imgFallback(this)">
+              <div class="category-body">
+                <h3>Gorras urbanas</h3>
+                <p>Diseños de calle con bordados que se hacen notar.</p>
+                <span class="category-cta">Explorar <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-lg-4">
+            <a class="category-card" href="pages/catalogo.html?categoria=Trucker">
+              <img src="https://images.pexels.com/photos/26956137/pexels-photo-26956137.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Gorra trucker verde y camel con parche frontal" loading="lazy" onerror="imgFallback(this)">
+              <div class="category-body">
+                <h3>Gorras trucker</h3>
+                <p>La clásica malla trasera que nunca pasa de moda.</p>
+                <span class="category-cta">Explorar <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-lg-4">
+            <a class="category-card" href="pages/catalogo.html?categoria=Snapback">
+              <img src="https://images.pexels.com/photos/5343088/pexels-photo-5343088.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Gorra snapback negra con visera camuflaje sobre pared de ladrillo" loading="lazy" onerror="imgFallback(this)">
+              <div class="category-body">
+                <h3>Gorras snapback</h3>
+                <p>Visera plana, frontal alto y ajuste perfecto.</p>
+                <span class="category-cta">Explorar <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-lg-4">
+            <a class="category-card" href="pages/catalogo.html?categoria=Dad%20Hat">
+              <img src="https://images.pexels.com/photos/7562957/pexels-photo-7562957.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Gorra dad hat beige colgada en un banco de madera" loading="lazy" onerror="imgFallback(this)">
+              <div class="category-body">
+                <h3>Gorras dad hat</h3>
+                <p>Suaves y sin estructura para un look relajado.</p>
+                <span class="category-cta">Explorar <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-lg-4">
+            <a class="category-card" href="pages/catalogo.html?categoria=Premium">
+              <img src="https://images.pexels.com/photos/9280916/pexels-photo-9280916.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Retrato con iluminación suave de hombre usando gorra negra" loading="lazy" onerror="imgFallback(this)">
+              <div class="category-body">
+                <h3>Gorras premium</h3>
+                <p>Cuero, seda y lana en ediciones de tiraje corto.</p>
+                <span class="category-cta">Explorar <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== PRODUCTOS DESTACADOS ====================== -->
+    <section class="section" aria-labelledby="featuredTitle">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Selección CAPZONE</span>
+            <h2 class="section-title" id="featuredTitle">Productos destacados</h2>
+            <p class="section-subtitle">Las gorras que mejor se mueven esta temporada.</p>
+          </div>
+          <a class="link-all" href="pages/catalogo.html">Ver catálogo completo <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="product-grid" id="featuredGrid" aria-live="polite">
+          <noscript><p>Activa JavaScript para ver el catálogo de productos.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== BANNER PROMOCIONAL ====================== -->
+    <section class="section pt-0" aria-label="Promoción de envío gratis">
+      <div class="container">
+        <div class="promo-banner">
+          <div class="row align-items-center g-4 position-relative">
+            <div class="col-lg-8">
+              <h2>Envío gratis en compras superiores a $150.000</h2>
+              <p>Despachamos a toda Colombia en 2–5 días hábiles. Sin costos ocultos, con seguimiento por correo.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a class="btn btn-accent btn-lg" href="pages/catalogo.html">Visitar catálogo <i class="bi bi-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== MÁS VENDIDOS ======================== -->
+    <section class="section pt-0" aria-labelledby="bestsellersTitle">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Favoritos de la gente</span>
+            <h2 class="section-title" id="bestsellersTitle">Productos más vendidos</h2>
+            <p class="section-subtitle">Lo que más sale de nuestro almacén cada semana.</p>
+          </div>
+          <a class="link-all" href="pages/catalogo.html?orden=relevancia">Ver más <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="product-grid" id="bestsellersGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ==================== PRODUCTOS VISTOS ==================== -->
+    <section class="section section-alt" id="recentSection" aria-labelledby="recentTitle">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Continúa por donde ibas</span>
+            <h2 class="section-title" id="recentTitle">Vistos recientemente</h2>
+          </div>
+          <a class="link-all" href="pages/catalogo.html">Explorar más <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="product-grid" id="recentGrid"></div>
+      </div>
+    </section>
+
+    <!-- ========================== NEWSLETTER ========================== -->
+    <section class="section pt-0" aria-labelledby="newsletterTitle">
+      <div class="container">
+        <div class="newsletter">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+              <span class="section-kicker text-white">Newsletter</span>
+              <h2 id="newsletterTitle">Recibe un 10% en tu primera compra</h2>
+              <p>Suscríbete y sé el primero en conocer lanzamientos, descuentos y ediciones limitadas.</p>
+            </div>
+            <div class="col-lg-6">
+              <form class="newsletter-form" data-newsletter novalidate>
+                <label class="visually-hidden" for="newsletterEmail">Correo electrónico</label>
+                <input class="form-control" type="email" id="newsletterEmail" placeholder="tu@correo.com" required>
+                <button class="btn btn-dark" type="submit">Suscribirme</button>
+              </form>
+              <p class="newsletter-note">Al suscribirte aceptas nuestra política de privacidad. Puedes darte de baja cuando quieras.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <span class="brand-logo" aria-hidden="true">CZ</span>
+            <span class="brand-name">CAPZONE</span>
+          </div>
+          <p>Tienda especializada en gorras. Seleccionamos materiales nobles, bordados limpios y siluetas que duran más de una temporada.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="CAPZONE en Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="CAPZONE en Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="CAPZONE en TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="CAPZONE en X"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h2>Enlaces</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="pages/catalogo.html">Catálogo</a></li>
+            <li><a href="pages/nosotros.html">Nosotros</a></li>
+            <li><a href="pages/contacto.html">Contacto</a></li>
+            <li><a href="pages/carrito.html">Mi carrito</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h2>Categorías</h2>
+          <ul class="footer-links">
+            <li><a href="pages/catalogo.html?categoria=Deportivas">Deportivas</a></li>
+            <li><a href="pages/catalogo.html?categoria=Urbanas">Urbanas</a></li>
+            <li><a href="pages/catalogo.html?categoria=Trucker">Trucker</a></li>
+            <li><a href="pages/catalogo.html?categoria=Snapback">Snapback</a></li>
+            <li><a href="pages/catalogo.html?categoria=Premium">Premium</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h2>Contacto</h2>
+          <ul class="footer-links footer-contact">
+            <li><i class="bi bi-geo-alt"></i><span>Calle 123 #45-67, Bogotá D.C., Colombia</span></li>
+            <li><i class="bi bi-telephone"></i><span>+57 300 123 4567</span></li>
+            <li><i class="bi bi-envelope"></i><span>hola@capzone.com</span></li>
+            <li><i class="bi bi-clock"></i><span>Lun a Sáb · 9:00 a.m. – 7:00 p.m.</span></li>
+          </ul>
+          <h2 class="mt-4">Métodos de pago</h2>
+          <div class="payment-methods">
+            <span>VISA</span><span>MASTERCARD</span><span>PSE</span><span>NEQUI</span><span>DAVIPLATA</span><span>CONTRAENTREGA</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 CAPZONE. Todos los derechos reservados.</span>
+        <span><a href="pages/nosotros.html#legales">Términos y condiciones</a> · <a href="pages/nosotros.html#legales">Política de privacidad</a> · <a href="pages/nosotros.html#legales">Política de cambios</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>
